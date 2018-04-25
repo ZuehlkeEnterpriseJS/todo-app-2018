@@ -21,3 +21,7 @@ Add a babel transpiler and the style loader as plugins.
 ### 5. Add linting
 Add eslint as npm script
 [Read more](5-linting/Readme.md)
+
+### 5. Testing
+Use Jest to run unit tests
+[Read more](5-linting/Readme.md)
