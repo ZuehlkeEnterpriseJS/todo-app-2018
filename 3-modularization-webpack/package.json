@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "rollup --input src/app.js --output bundle.js",
+    "build": "rollup --i src/app.js --o bundle.js --f iife",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Christian Kohler",
@@ -13,6 +13,6 @@
     "bootstrap": "^3.3.7"
   },
   "devDependencies": {
-    "rollup": "^0.36.3"
+    "rollup": "^0.58.2"
   }
 }
