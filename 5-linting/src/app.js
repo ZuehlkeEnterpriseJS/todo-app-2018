@@ -1,43 +1,43 @@
-import '../styles.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { TodoStore } from './todo-store';
-import { todoElement } from './todo-element';
- 
+import "../styles.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { TodoStore } from "./todo-store";
+import { todoElement } from "./todo-element";
+
 /**
  * TodoComponent renders todos and handles events
  */
 class TodoAppComponent {
-	constructor(container) {
-		this.container = container;
-		this.todoStore = new TodoStore();
-		this.todoStore.subscribe(todos => this.render(todos));
-	}
-    
-	onKeyUp(event) {
-		const isEnterKey = event.keyCode === 13;
+  constructor(container) {
+    this.container = container;
+    this.todoStore = new TodoStore();
+    this.todoStore.subscribe(todos => this.render(todos));
+  }
 
-		if (isEnterKey) {
-			this.onAdd();
-		}
-	}
+  onKeyUp(event) {
+    const isEnterKey = event.keyCode === 13;
 
-	onAdd() {
-		const description = document.querySelector('#new-todo-description').value;
-		if (description) {
-			this.todoStore.addTodo(description);
-		}
-	}
+    if (isEnterKey) {
+      this.onAdd();
+    }
+  }
 
-	onSetDone(todoId) {
-		this.todoStore.setDone(todoId);
-	}
+  onAdd() {
+    const description = document.querySelector("#new-todo-description").value;
+    if (description) {
+      this.todoStore.addTodo(description);
+    }
+  }
 
-	onClear() {
-		this.todoStore.clear();
-	}
+  onSetDone(todoId) {
+    this.todoStore.setDone(todoId);
+  }
 
-	render(todos) {
-		this.container.innerHTML = `
+  onClear() {
+    this.todoStore.clear();
+  }
+
+  render(todos) {
+    this.container.innerHTML = `
             <h1>JS Enterprise ToDo</h1>
 
             <div id="add-todo-panel" class="input-group">
@@ -52,14 +52,14 @@ class TodoAppComponent {
             </div>
 
             <ul id="todo-list-panel" class="list-group">
-                ${todos.map(todo => todoElement(todo)).join('')}
+                ${todos.map(todo => todoElement(todo)).join("")}
             </ul>
             
             <div class="menu">
                 <button class="btn btn-danger" onclick="todo.onClear()">Clear</button>
             </div>
         `;
-	}
+  }
 }
 
-window.todo = new TodoAppComponent(document.querySelector('#todo-app'));
+window.todo = new TodoAppComponent(document.querySelector("#todo-app"));
