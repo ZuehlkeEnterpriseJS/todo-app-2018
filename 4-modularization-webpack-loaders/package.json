@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "webpack src/app.js bundle.js",
+    "build": "webpack src/app.js -o bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Christian Kohler",
@@ -13,6 +13,7 @@
     "bootstrap": "^3.3.7"
   },
   "devDependencies": {
-    "webpack": "^2.1.0-beta.25"
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
   }
 }
