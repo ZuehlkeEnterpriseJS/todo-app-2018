@@ -6,18 +6,7 @@
 1. Link bootstrap.min.css in index.html
 
 ## Static Webserver
-### MacOs
-```
- python -m SimpleHTTPServer
-```
-
-### Windows / MacOs / Linux
-Install
-```
- npm install http-server -g
-```
-
 Run
 ```
-http-server
+npx http-server
 ```
